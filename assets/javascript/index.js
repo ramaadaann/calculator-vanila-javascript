@@ -99,6 +99,46 @@ const deleteButton = document.querySelector("[data-clear]");
 const allClearButton = document.querySelector("[data-clear-all]");
 const previousOperandTextElement = document.querySelector("[data-previous]");
 const currentOperandTextElement = document.querySelector("[data-current]");
+const CurrentTime = document.querySelector(".time");
+
+setInterval(() => {
+  var Dates = new Date();
+  let Minutes;
+
+  switch (Dates.getMinutes()) {
+    case 1:
+      Minutes = "01";
+      break;
+    case 2:
+      Minutes = "02";
+      break;
+    case 3:
+      Minutes = "03";
+      break;
+    case 4:
+      Minutes = "04";
+      break;
+    case 5:
+      Minutes = "05";
+      break;
+    case 6:
+      Minutes = "06";
+      break;
+    case 7:
+      Minutes = "07";
+      break;
+    case 8:
+      Minutes = "08";
+      break;
+    case 9:
+      Minutes = "09";
+      break;
+    default:
+      Minutes = Dates.getMinutes();
+      break;
+  }
+  CurrentTime.innerHTML = `${Dates.getHours()} : ${Minutes} : ${Dates.getSeconds()}`;
+}, 1000);
 
 const calculator = new Calculator(
   previousOperandTextElement,
